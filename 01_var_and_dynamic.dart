@@ -1,3 +1,9 @@
+// 01_var_and_dynamic.dart
+// Topics:
+// - var
+// - String Interpolation
+// - dynamic
+//
 // Reference
 // - dart.dev: https://dart.dev/language/variables
 // - 개발하는 정대리 dart: https://www.youtube.com/watch?v=kg5FK0L7S-o&list=PLgOlaPUIbynrpTQNfJZyJhijO6i11vTNR
@@ -5,7 +11,7 @@
 void main() {
 
   // ----------------------------------------
-  // 1. var
+  // 1. var, 변수
   // ----------------------------------------
 
   // 변수는 var로 표현
@@ -16,13 +22,35 @@ void main() {
   // runtimeType: "이 변수가 실제 어떤 타입으로 동작하는지"를 실행 중(runtime)에 확인하는 프로퍼티
   print(myName.runtimeType); // String
 
+  // ----------------------------------------
+  // 2. String Interpolation, 문자열 보간법
+  // ----------------------------------------
+
   // 자료형을 확정한다면, 앞에 타입을 명시
   int myAge = 26;
   print(myAge);  // 26
   print(myAge.runtimeType); // int
 
+  // 문자열 보간법 ($ 기호)
+  print('현재 나이: $myAge'); // 현재 나이: 26
+  
+  // 연산, 함수 호출, 조건식은 {}로 감싼다.
+  print('내년 나이: ${myAge + 1}'); // 내년 나이: 27
+  print('myAge의 타입: ${myAge.runtimeType}'); // myAge의 타입: int
+
+  // 조건식도 가능
+  var isAdult = myAge >= 20;
+  print('성인 여부: ${isAdult ? "성인" : "미성년자"}'); // 성인 여부: 성인
+
+  // 아래와 같이 다중 문자열(multiline string)에도 사용이 가능하다.
+  print('''
+  이름: $myName
+  나이: $myAge
+  ''');
+
+
   // ----------------------------------------
-  // 2. dynamic
+  // 3. dynamic
   // ----------------------------------------
 
   // dynamic을 사용해 어떤 자료형도 받을 수 있도록 가능
