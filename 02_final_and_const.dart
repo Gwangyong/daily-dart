@@ -31,14 +31,14 @@ void main() {
   // 2. const
   // ----------------------------------------
 
-  // 컴파일 타임(compile-time) 시점에 값이 결정됨
-  // 컴파일러가 미리 계싼 가능한 한 번이 결정된 후 재할당 불가
+  // 컴파일 타임(compile-time)에 값이 확정됨
+  // 컴파일러가 실행 없이 계산 가능한 값만 허용되며 재할당 불가
 
-  const name2 = 'MoriOS';
-  const int age2 = 26; 
+  const appName = 'Podoit';
+  const int maxCount = 5; 
 
-  print("name: $name2, type: ${name2.runtimeType}"); // name: MoriOS, type: String
-  print("age: $age2, type: ${age2.runtimeType}"); // age: 26, type: int
+  print("appName: $appName, type: ${appName.runtimeType}"); // name: MoriOS, type: String
+  print("maxCount: $maxCount, type: ${maxCount.runtimeType}"); // age: 26, type: int
 
   // const now2 = DateTime.now(); <- final과 다르게 컴파일 시점에 값이 정해지기에 "불가능"
 }
