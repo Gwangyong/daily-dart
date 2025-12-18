@@ -26,6 +26,7 @@ void main() {
   print("age: $age, type: ${age.runtimeType}"); // age: 26, type: int
 
   final now = DateTime.now(); // 런타임에 값이 결정되기에 "가능"
+  print('now: $now');
 
   // ----------------------------------------
   // 2. const
