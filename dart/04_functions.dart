@@ -1,6 +1,7 @@
 // 04_functions.dart
 // Topics:
 // - functions
+// - Arrow function (=> Syntax)
 //
 // Reference
 // - dart.dev: https://dart.dev/language/functions
@@ -22,6 +23,10 @@ void main() {
   
   // 필요하면 매개변수를 명시적으로 전달해서 기본값을 덮어쓸 수 있음
   print(myAge(26, isTrue: false)); // myAge: 26 / isTrue: false
+
+  saySomething2(); // 아무말
+
+  print(saySomeWord()); // 단어 반환
 }
 
 // - 함수 정의 예시
@@ -33,8 +38,27 @@ String saySomething() { // 반환 타입을 생략하면 dynamic이 됨
   return '하지만 공부는 조금이라도 해야겠지...';
 }
 
-// 매개변수를 포함한 함수 정의
+// - 매개변수를 포함한 함수 정의
 // 기본값을 가지는 매개변수는 {}로 감싸서 선언해야함
 String myAge(int age, {bool isTrue = true}) {
   return 'myAge: $age / isTrue: $isTrue' ;
 }
+
+// ----------------------------------------
+// 2. Arrow function (=> Syntax)
+// ----------------------------------------
+
+// void saySomething2() {
+//   print('아무말');
+// }
+
+// 위의 예시를 아래와같이 축약하는 형태도 가능
+// => 구문이 return 블록을 대체함
+void saySomething2() => print('아무말');
+
+// String saySomeWord() {
+//   return '단어 반환';
+// }
+
+// 아래와 같이 반환값이 있어도 축약 가능
+String saySomeWord() => '단어 반환';
