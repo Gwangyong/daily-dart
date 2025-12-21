@@ -14,9 +14,23 @@ void main() {
 
   // 예시: typedef 별칭이름 = 반환타입 Function(매개변수타입들);
 
-MyNickname name = 'Mori';
-print('name.runtimeType: ${name.runtimeType}'); // name.runtimeType: String
+  MyNickname name = 'Mori';
+  print('name.runtimeType: ${name.runtimeType}'); // name.runtimeType: String
 
+  calculate(3, 4, add); // result: 7
+  calculate(3, 4, multiply); // result: 12
 }
 
+// 간단 예시
 typedef MyNickname = String;
+
+// 추가 예시
+typedef Operation = int Function(int a, int b);
+
+int add(int a, int b) => a + b;
+int multiply(int a, int b) => a * b;
+
+void calculate(int a, int b, Operation operation) {
+  final result = operation(a, b);
+  print('result: $result');
+}
