@@ -24,12 +24,13 @@ void main() {
 // 간단 예시
 typedef MyNickname = String;
 
-// 추가 예시
+// 함수 타입 별칭 예시
 typedef Operation = int Function(int a, int b);
 
 int add(int a, int b) => a + b;
 int multiply(int a, int b) => a * b;
 
+// Operation 타입의 매개변수를 받는 함수
 void calculate(int a, int b, Operation operation) {
   final result = operation(a, b);
   print('result: $result');
