@@ -1,7 +1,8 @@
 // 06_function_parameters.dart
 // Topics:
-// - positional parameters
+// - Positional parameters
 // - Named parameters
+// - Mixed parameters
 //
 // Reference
 // - dart.dev: https://dart.dev/language/functions#parameters
@@ -17,10 +18,28 @@ someFunction('Mori'); // name: Mori, age: null, isDone: false
 // 이름 기반이기에 이름(key)으로 매핑
 // 순서 상관 없음
 otherFunction(age: 26, name: 'Mori'); // name: Mori, age: 26, isDone: true
+
+// 이름 기반과는 별개로, 위치 기반 매개변수들의 순서만 잘 맞는다면 아래의 코드도 정상 작동
+mixedFunction(
+  isDone: true, 
+  'Mori', 
+  phone: 'iPhone 16 Pro Max', 
+  26, 
+  height: 185); // name: Mori, age: 26, isDone: true, phone: iPhone 16 Pro Max, height: 185
 }
 
+// 아무래도 추천되는 방식 (positional -> named 흐름 순서대로)
+// mixedFunction(
+//   'Mori', 
+//   26, 
+//   isDone: true, 
+//   phone: 'iPhone 16 Pro Max', 
+//   height: 185); 
+// }
+// 결과는 동일 -> name: Mori, age: 26, isDone: true, phone: iPhone 16 Pro Max, height: 185
+
 // ----------------------------------------------
-// 1. positional parameters - 위치 기반 매개변수 `()`
+// 1. Positional parameters - 위치 기반 매개변수 `()`
 // ----------------------------------------------
 
 // 선언된 순서대로 값이 전달됨
@@ -40,4 +59,13 @@ someFunction(String name, [int? age, bool? isDone = false]) {
 // 3. required로 필수 지정
 otherFunction({required String name, int? age, bool isDone = true}) {
   print('name: $name, age: $age, isDone: $isDone');
+}
+
+// ----------------------------------------------
+// 3. Mixed parameters - 위치 기반 + 이름 기반 매개변수
+// ----------------------------------------------
+
+// () + {}를 사용해서 위치 + 이름 기반 매개변수를 같이 사용 가능
+mixedFunction(String name, int age, {bool isDone = false, required String phone, int? height}) {
+  print('name: $name, age: $age, isDone: $isDone, phone: $phone, height: $height');
 }
